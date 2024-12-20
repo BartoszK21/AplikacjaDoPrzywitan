@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Powitanie</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button[type="reset"] {
+            background-color: #f44336;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+
+</head>
+
+<body>
+<h1>Cześć, Jestem Bartosz Kowalski a Ty jak masz na imie?</h1>
+
+<form id="form">
+    Imię: <input type="text" id="imie"><br>
+    Nazwisko: <input type="text" id="nazwisko"><br>
+    <button type="submit">Przywitaj mnie!</button>
+    <button type="reset">Resetuj</button>
+</form>
+
+<script>
+    $(function() {
+        $('#form').submit(function(e) {
+            e.preventDefault();
+            var imie = $('#imie').val();
+            var nazwisko = $('#nazwisko').val();
+            alert('Cześć, ' + imie + ' ' + nazwisko + '!');
+        });
+    });
+</script>
+
+</body>
+
+</html>
